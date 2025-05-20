@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Bug Tracker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Bug Tracker</h1>
-    <a href="{{ url_for('add_bug') }}">Add New Bug</a>
-    <ul>
-        {% for bug in bugs %}
-            <li>
-                <strong>{{ bug.title }}</strong> - {{ bug.description }} ({{ bug.priority }}) - <em>{{ bug.status }}</em>
-                {% if bug.status != 'Resolved' %}
-                    <a href="{{ url_for('resolve_bug', bug_id=loop.index0) }}">Mark Resolved</a>
-                {% endif %}
-            </li>
-        {% else %}
-            <li>No bugs yet!</li>
-        {% endfor %}
-    </ul>
+    <header>
+        <h1>Bug Tracker</h1>
+    </header>
+
+    <div class="container">
+        <a href="{{ url_for('add_bug') }}">➕ Add New Bug</a>
+        <ul>
+            {% for bug in bugs %}
+                <li>
+                    <strong>{{ bug.title }}</strong><br>
+                    {{ bug.description }}<br>
+                    <em>Priority: {{ bug.priority }} | Status: {{ bug.status }}</em><br>
+                    {% if bug.status != 'Resolved' %}
+                        <a href="{{ url_for('resolve_bug', bug_id=loop.index0) }}">✔ Mark as Resolved</a>
+                    {% endif %}
+                </li>
+            {% else %}
+                <li>No bugs reported yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; {{ 2025 }} Moe Aoun</p>
+    </footer>
 </body>
 </html>
