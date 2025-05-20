@@ -51,5 +51,13 @@ def resolve_bug(bug_id):
     db.session.commit()
     return redirect(url_for('index'))
 
+@app.route('/delete/<int:bug_id>')
+def delete_bug(bug_id):
+    bug = Bug.query.get_or_404(bug_id)
+    db.session.delete(bug)
+    db.session.commit()
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     app.run(debug=True)
