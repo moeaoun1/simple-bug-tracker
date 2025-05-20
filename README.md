@@ -1,25 +1,25 @@
 # Simple Bug Tracker
 
-A lightweight web app to submit and track bugs. Built with Flask and SQLite to demonstrate backend logic, form handling, and template rendering.
+A lightweight web app for submitting and tracking bugs. Built with Flask and designed to demonstrate backend development using Python, form handling, and template rendering.
 
-## Features
+## 🔧 Features
 - Submit a bug with title, description, and priority
-- View all submitted bugs
+- View a list of active and resolved bugs
 - Mark bugs as resolved
-- (Coming soon: SQLite database + persistent storage)
+- Simple in-memory list (SQLite version coming soon)
 
-## Stack
+## 🧱 Stack
 - Python 3
 - Flask
 - HTML/CSS
 - Jinja2 Templating
 
-## Setup
+## 🚀 Setup Instructions
 
 ```bash
-git clone https://github.com/moeaoun1/simple-bug-tracker
+git clone https://github.com/moeaoun1/simple-bug-tracker.git
 cd simple-bug-tracker
 python -m venv venv
-venv\Scripts\activate  # or source venv/bin/activate on Mac/Linux
+venv\Scripts\activate       # or source venv/bin/activate on Mac/Linux
 pip install -r requirements.txt
 python app.py
