@@ -20,6 +20,6 @@ A lightweight web app for submitting and tracking bugs. Built with Flask and des
 git clone https://github.com/moeaoun1/simple-bug-tracker.git
 cd simple-bug-tracker
 python -m venv venv
-venv\Scripts\activate       # or source venv/bin/activate on Mac/Linux
+venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
